@@ -146,7 +146,7 @@ class FileLoader extends Loader {
     var callbacks = loading[url];
 
     dynamic respData;
-    if (!kIsWeb && !url.startsWith("http")) {
+      if (url.startsWith("assets") || url.startsWith("packages")) {
       if (url.startsWith("assets")) {
         if (responseType == "text") {
           respData = await rootBundle.loadString(url);
